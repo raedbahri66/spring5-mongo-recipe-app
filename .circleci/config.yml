@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  build-and-test-and-analyze:
     docker:
       # specify the version you desire here
       - image: circleci/openjdk:8-jdk
@@ -56,10 +56,11 @@ jobs:
       - run:
           name: Analyze on SonarCloud
           command: gradle build sonarqube
+
 workflows:
-  main:
+  sample:
     jobs:
-      - build:
+      - build-and-test-and-analyze:
           context: SonarCloud
 
 
