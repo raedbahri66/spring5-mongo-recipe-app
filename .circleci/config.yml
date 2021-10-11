@@ -55,5 +55,10 @@ jobs:
           path: ~/junit
 
       - run:
-          name: Send to CodeCov
-          command: bash <(curl -s https://codecov.io/bash)
+          name: Analyze on SonarCloud
+          command: gradle build sonarqube"
+
+
+
+
+
